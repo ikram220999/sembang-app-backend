@@ -9,7 +9,7 @@ const user = [];
 
 const io = new Server(server, {
     cors: {
-        origin: process.env.PORT || 5000,
+        origin: "https://sembang-kari-app.herokuapp.com/" + (process.env.PORT || 5000),
         methods: ["GET", "POST"],
     },
 });
