@@ -4,8 +4,6 @@ const http = require("https");
 const { Server } = require("socket.io");
 const cors = require("cors");
 
-app.use(cors());
-
 const server = http.createServer(app);
 const user = [];
 
@@ -13,10 +11,15 @@ const io = new Server(server, {
     cors: {
         origin: process.env.PORT || 5000,
         methods: ["GET", "POST"],
-        credentials:true,            //access-control-allow-credentials:true
-        optionSuccessStatus:200
     },
 });
+
+const corsOptions ={
+    origin: process.env.PORT || 5000, 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 io.on("connection", (socket) => {
 
