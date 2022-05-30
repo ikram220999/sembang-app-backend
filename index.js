@@ -13,6 +13,8 @@ const io = new Server(server, {
     cors: {
         origin: process.env.PORT || 5000,
         methods: ["GET", "POST"],
+        credentials:true,            //access-control-allow-credentials:true
+        optionSuccessStatus:200
     },
 });
 
