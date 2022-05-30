@@ -15,7 +15,7 @@ const io = new Server(server, {
 });
 
 const corsOptions ={
-    origin: process.env.PORT || 5000, 
+    origin: "https://sembang-kari-app.herokuapp.com/" + (process.env.PORT || 5000), 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
