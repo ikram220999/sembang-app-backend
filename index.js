@@ -9,7 +9,12 @@ app.use(cors());
 const server = http.createServer(app);
 const user = [];
 
-const io = new Server(server);
+const io = new Server(server, {
+    cors: {
+        origin: process.env.PORT || 5000,
+        methods: ["GET", "POST"],
+    },
+});
 
 io.on("connection", (socket) => {
 
