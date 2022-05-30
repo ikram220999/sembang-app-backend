@@ -11,7 +11,7 @@ const user = [];
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: process.env.PORT || 5000,
         methods: ["GET", "POST"],
     },
 });
@@ -33,6 +33,6 @@ io.on("connection", (socket) => {
     })
 });
 
-server.listen(3001, () => {
+server.listen(process.env.PORT || 5000, () => {
     console.log("SERVER OK");
 });
