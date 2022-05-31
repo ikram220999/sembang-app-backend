@@ -7,11 +7,9 @@ const cors = require("cors");
 const server = http.createServer(app);
 const user = [];
 
-app.use(cors());
-
 const io = new Server(server, {
   cors: {
-    origin: `https://sembang-kari-app.herokuapp.com:${
+    origin: `https://sembang-kari-app.herokuapp.com/${
       process.env.PORT || 5000
     }/`,
     credentials:true,            //access-control-allow-credentials:true
@@ -19,6 +17,8 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.send("server ok");
