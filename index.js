@@ -1,19 +1,10 @@
 const express = require("express");
 const app = express();
+const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 
-const host = "0.0.0.0";
-const port = process.env.PORT || 3000;
-
-app.listen(port, host, function () {
-  console.log("Server started.......");
-});
-
-const server = app.listen(port, host, function () {
-    console.log("Server started.......");
-  });;
-
+const server = http.createServer(app);
 const user = [];
 
 app.use(cors());
@@ -60,3 +51,9 @@ app.get("/", (req, res) => {
 //     console.log("SERVER OK");
 // });
 
+const host = "0.0.0.0";
+const port = process.env.PORT || 3000;
+
+app.listen(port, host, function () {
+  console.log("Server started.......");
+});
