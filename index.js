@@ -19,7 +19,10 @@ const io = new Server(server, {
 });
 
 app.get("*", (req, res) => {
-    console.log("kambing");
+    res.send("kambing");
+}); 
+
+ console.log("kambing");
   io.on("connection", (socket) => {
     user.push(socket.id);
 
@@ -34,7 +37,6 @@ app.get("*", (req, res) => {
       socket.to(data.room).emit("receive_message", new_data);
     });
   });
-});
 
 const corsOptions ={
     origin: `https://sembang-kari-app.herokuapp.com:${
