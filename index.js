@@ -9,7 +9,7 @@ const user = [];
 
 const io = new Server(server, {
   cors: {
-    origin: `http://sembang-kari-app.herokuapp.com`,
+    origin: `https://62963592bdfd1a0067f1f0a3--stately-torrone-f0cacf.netlify.app`,
     // `https://62961492f8604e48712a7bbb--netlify-thinks-ikram220999-is-great.netlify.app`
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200,
