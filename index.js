@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const http = require("http");
+const http = require("https");
 const { Server } = require("socket.io");
 const cors = require("cors");
 
@@ -11,7 +11,7 @@ app.use(cors());
 
 const io = new Server(server, {
   cors: {
-    origin: `http://sembang-kari-app.herokuapp.com:${
+    origin: `https://sembang-kari-app.herokuapp.com:${
       process.env.PORT || 5000
     }/`,
     methods: ["GET", "POST"],
