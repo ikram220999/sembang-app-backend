@@ -36,12 +36,14 @@ app.get("*", (req, res) => {
   });
 });
 
-// const corsOptions ={
-//     origin: "https://sembang-kari-app.herokuapp.com/" + (process.env.PORT || 5000),
-//     credentials:true,            //access-control-allow-credentials:true
-//     optionSuccessStatus:200
-// }
-// app.use(cors(corsOptions));
+const corsOptions ={
+    origin: `https://sembang-kari-app.herokuapp.com:${
+        process.env.PORT || 5000
+      }/`,
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 // server.listen("http:///" + process.env.PORT || 5000, () => {
 //     console.log("SERVER OK");
