@@ -18,9 +18,9 @@ const io = new Server(server, {
   },
 });
 
-app.get("*", (req, res) => {
-    res.send(io);
-}); 
+// app.get("*", (req, res) => {
+//     res.send(io);
+// }); 
 
  console.log("kambing");
   io.on("connection", (socket) => {
