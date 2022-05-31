@@ -9,9 +9,10 @@ const user = [];
 
 const io = new Server(server, {
   cors: {
-    origin: `http://sembang-kari-app.herokuapp.com/${
-      process.env.PORT || 5000
-    }/`,
+      origin: `https://62960484b2eeb842c462e0a0--the-awesome-ikram220999-site.netlify.app`,
+    // origin: `http://sembang-kari-app.herokuapp.com:${
+    //   process.env.PORT || 5000
+    // }/`,
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200,
     methods: ["GET", "POST"],
