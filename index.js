@@ -7,14 +7,7 @@ const cors = require("cors");
 const server = http.createServer(app);
 const user = [];
 
-const corsOptions ={
-    origin: `https://sembang-kari-app.herokuapp.com:${
-        process.env.PORT || 5000
-      }/`,
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+app.use(cors());
 
 const io = new Server(server, {
   cors: {
@@ -44,6 +37,15 @@ const io = new Server(server, {
       socket.to(data.room).emit("receive_message", new_data);
     });
   });
+
+// const corsOptions ={
+//     origin: `https://sembang-kari-app.herokuapp.com:${
+//         process.env.PORT || 5000
+//       }/`,
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
+// app.use(cors(corsOptions));
 
 // server.listen("http:///" + process.env.PORT || 5000, () => {
 //     console.log("SERVER OK");
