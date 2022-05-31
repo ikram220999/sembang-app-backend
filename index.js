@@ -44,6 +44,13 @@ io.on("connection", (socket) => {
     })
 });
 
-server.listen("http://sembang-kari-app.herokuapp.com/" + process.env.PORT || 5000, () => {
-    console.log("SERVER OK");
-});
+// server.listen("http:///" + process.env.PORT || 5000, () => {
+//     console.log("SERVER OK");
+// });
+
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
+
+app.listen(port, host, function() {
+    console.log("Server started.......");
+  });
