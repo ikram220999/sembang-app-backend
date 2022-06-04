@@ -9,7 +9,8 @@ const user = [];
 
 const io = new Server(server, {
   cors: {
-    origin: `https://629b662768753b0008ea617e--stately-torrone-f0cacf.netlify.app`,
+    origin: `https://stately-torrone-f0cacf.netlify.app`,
+    
     
     // `https://62961492f8604e48712a7bbb--netlify-thinks-ikram220999-is-great.netlify.app`
     credentials:true,            //access-control-allow-credentials:true
