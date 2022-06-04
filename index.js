@@ -12,7 +12,8 @@ const io = new Server(server, {
     origin: `https://stately-torrone-f0cacf.netlify.app`,
     
     
-    // `https://62961492f8604e48712a7bbb--netlify-thinks-ikram220999-is-great.netlify.app`
+    // https://stately-torrone-f0cacf.netlify.app
+    // http://localhost:3000
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200,
     methods: ["GET", "POST"],
@@ -32,7 +33,10 @@ app.get("/", (req, res) => {
     // console.log(`User Connected ${socket.id}`);
 
     socket.on("join_room", (data) => {
-      socket.join(data);
+      let new_data = {user_id: data.id, room: data.room};
+      socket.join(data.room);
+
+      socket.to(data.room).emit("new_user_join", new_data);
     });
 
     socket.on("send_message", (data) => {
@@ -55,7 +59,7 @@ app.get("/", (req, res) => {
 // });
 
 const host = "0.0.0.0";
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 server.listen(port, host, function () {
   console.log("Server started.......");
